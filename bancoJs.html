@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saque Bancário </title>
+</head>
+<body>
+   <form>
+    <p> Saldo: <input type="number" id="saldo" readonly value="300"> </p>
+    <p> Valor do Saque: <input type="number" id="valsaque"> </p>
+    <button type="button" onclick="obterDados()"> Concluir </button>
+   </form>   
+    <script>
+        function obterDados(){
+            let saldo = parseFloat(document.getElementById("saldo").value); 
+            let valsaque = parseFloat(document.getElementById("valsaque").value);
+           
+            
+            if (valsaque <= saldo){
+                alert ("Saque Concluído");
+               let result = saldo - valsaque;
+                document.getElementById("saldo").value = result;
+            }else{
+                alert ("Saldo Inválido");
+            }
+        }
+         
+    </script>
+    
+</body>
+</html>
